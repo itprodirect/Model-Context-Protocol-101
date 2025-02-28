@@ -23,9 +23,9 @@ This repository covers:
 ```bash
 git clone https://github.com/itprodirect/Model-Context-Protocol-101.git
 cd Model-Context-Protocol-101
+```
 
-
-### 2️⃣ Create a Virtual Environment
+### 2️⃣ **Create a Virtual Environment**
 ```bash
 python -m venv venv
 # On Mac/Linux
@@ -34,12 +34,12 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-### 3️⃣ Install Dependencies
+### 3️⃣ **Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Run Jupyter Notebook
+### 4️⃣ **Run Jupyter Notebook**
 ```bash
 jupyter notebook
 ```
@@ -55,11 +55,11 @@ jupyter notebook
 ---
 ## 📖 Usage Guide
 This tutorial walks through how to:
-✅ **Initialize the MCP Server**
-✅ **Test MCP tools locally**
-✅ **Expand MCP with custom functions**
-✅ **Read and process CSV files**
-✅ **Deploy and use MCP tools efficiently**
+✅ **Initialize the MCP Server**  
+✅ **Test MCP tools locally**  
+✅ **Expand MCP with custom functions**  
+✅ **Read and process CSV files**  
+✅ **Deploy and use MCP tools efficiently**  
 
 ---
 ## 📂 Project Structure
