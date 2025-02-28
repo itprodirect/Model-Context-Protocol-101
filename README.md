@@ -1,26 +1,29 @@
-**README.md (Improved Version)**
-
 # 🚀 Model-Context-Protocol-101
 
-A **step-by-step tutorial** exploring the **Model Context Protocol (MCP)**. This repository serves as a **structured learning guide** for AI/ML practitioners, consultants, and developers interested in **practical MCP implementation**.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/itprodirect/Model-Context-Protocol-101/ci.yml)](https://github.com/itprodirect/Model-Context-Protocol-101/actions)
+[![Dependencies](https://img.shields.io/badge/Dependencies-Updated-brightgreen.svg)](https://github.com/itprodirect/Model-Context-Protocol-101/blob/main/requirements.txt)
+
+A step-by-step tutorial exploring the **Model Context Protocol (MCP)**. This repository serves as a structured learning guide for AI/ML practitioners, consultants, and developers interested in practical **MCP implementation**.
 
 ---
-## 📌 Overview
+
+## 📌 **Overview**
 This repository covers:
-- ✅ **Setting up a Python virtual environment** for isolated development.
-- 📦 **Managing dependencies** to ensure smooth MCP operations.
-- 📊 **Data handling with Pandas** and CSV processing.
-- 🛠️ **Implementing MCP tools** to create, test, and expand models.
-- 📒 **Jupyter Notebooks** for hands-on learning and experimentation.
+✔️ Setting up a Python virtual environment for isolated development.  
+✔️ Installing required dependencies using `pip install -r requirements.txt`.  
+✔️ Understanding MCP concepts with practical code examples.  
+✔️ Running Jupyter Notebooks for interactive experimentation.
 
 ---
-## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the Repository
+## 🛠️ **Getting Started**
+### 1️⃣ **Clone the Repository**
 ```bash
 git clone https://github.com/itprodirect/Model-Context-Protocol-101.git
 cd Model-Context-Protocol-101
-```
+
 
 ### 2️⃣ Create a Virtual Environment
 ```bash
