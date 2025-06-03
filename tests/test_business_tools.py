@@ -1,5 +1,10 @@
+
 import os
+import sys
 import pytest
+
+# Ensure the repository root is on sys.path so business_tools can be imported
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
 
 from business_tools import calculate_profit, get_sales_from_csv
 
