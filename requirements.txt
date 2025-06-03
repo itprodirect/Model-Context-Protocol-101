@@ -78,3 +78,4 @@ watchdog
 websockets
 wheel
 yarl
+fastmcp
