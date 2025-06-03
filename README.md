@@ -44,6 +44,11 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
+### 5️⃣ **Run Tests**
+```bash
+pytest
+```
+
 ---
 ## 🔑 Key Features
 
