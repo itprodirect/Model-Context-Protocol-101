@@ -10,6 +10,9 @@ __pycache__/
 *.pyo
 *.pyd
 
+# Ignore pytest cache
+.pytest_cache/
+
 # Ignore system files
 .DS_Store
 Thumbs.db
