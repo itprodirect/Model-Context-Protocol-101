@@ -16,3 +16,8 @@ def get_sales_from_csv(filename: str) -> float:
         for row in reader:
             total += float(row["sales"])
     return total
+
+
+def calculate_commission(premiums: list[float], rate: float = 0.1) -> float:
+    """Return total commission in USD rounded to two decimals."""
+    return round(sum(premiums) * rate, 2)
