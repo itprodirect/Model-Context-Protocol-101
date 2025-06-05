@@ -7,6 +7,8 @@
 
 A step-by-step tutorial exploring the **Model Context Protocol (MCP)**. This repository serves as a structured learning guide for AI/ML practitioners, consultants, and developers interested in practical **MCP implementation**.
 
+![Notebook demo](docs/img/notebook_screenshot.svg "Screenshot of notebook running a sales example")
+
 ---
 
 ## 📌 **Overview**
@@ -41,7 +43,7 @@ pip install -r requirements.txt
 
 ### 4️⃣ **Run Jupyter Notebook**
 ```bash
-jupyter notebook
+jupyter notebook notebooks/Model-Context-Protocol-101.ipynb
 ```
 
 ### 5️⃣ **Run Tests**
@@ -58,6 +60,15 @@ pytest
 - 🎯 **Practical Exercises**: Hands-on coding exercises for better understanding.
 
 ---
+## 🌟 Real-world Use Cases
+Here are quick examples of how an independent insurance agent might apply MCP:
+- **Automated Quotes** – load policy data from a CSV and generate quotes in seconds.
+- **Lead Tracking** – triage new leads automatically using simple prompts.
+- **Commission Insights** – compute profits and commissions with a single command.
+
+![MCP flow](docs/img/architecture.svg "CSV data flowing through MCP tools to outputs")
+
+---
 ## 📖 Usage Guide
 This tutorial walks through how to:
 ✅ **Initialize the MCP Server**  
@@ -70,12 +81,24 @@ This tutorial walks through how to:
 ## 📂 Project Structure
 ```
 Model-Context-Protocol-101/
-├── venv/                      # Virtual environment (ignored in .gitignore)
-├── Model-Context-Protocol-101.ipynb  # Main Jupyter Notebook
-├── sales_data.csv             # Sample data file
-├── README.md                  # Documentation
-├── LICENSE                    # Project License
+├── src/                # Python utilities
+├── notebooks/          # Jupyter notebooks
+├── data/               # Sample datasets
+├── docs/img/           # Diagrams and screenshots
+├── tests/              # Unit tests
+├── README.md           # Documentation
+├── requirements.txt    # Dependencies
+├── LICENSE             # Project License
+└── AGENTS.md           # Contribution guide
 ```
+
+---
+## 📚 Glossary
+| Term    | Meaning                                |
+| ------- | -------------------------------------- |
+| **MCP** | Model Context Protocol, our tooling API |
+| **Lead**| Potential client for an insurance policy|
+| **Premium** | Amount a customer pays for coverage |
 
 ---
 ## 📝 License
