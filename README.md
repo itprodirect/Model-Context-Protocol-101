@@ -79,7 +79,7 @@ print(df.head())
 EOF
 ```
 
-![MCP flow](docs/img/architecture.svg "CSV data flowing through MCP tools to outputs")
+![Architecture overview](docs/img/architecture.svg "Insurance CSV through MCP server to quote and commission outputs")
 
 ---
 ## 📖 Usage Guide
