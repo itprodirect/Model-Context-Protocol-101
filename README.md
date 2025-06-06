@@ -21,11 +21,15 @@ This repository covers:
 ---
 
 ## 🛠️ **Getting Started**
+
 ### 1️⃣ **Clone the Repository**
 ```bash
 git clone https://github.com/itprodirect/Model-Context-Protocol-101.git
 cd Model-Context-Protocol-101
 ```
+<div style="background-color:#e6f7ff;border-left:4px solid #1e90ff;padding:10px;margin:10px 0;">
+<strong>Time Saver:</strong> Having the repo locally lets independent insurance agents run examples without repeated downloads.
+</div>
 
 ### 2️⃣ **Create a Virtual Environment**
 ```bash
@@ -35,21 +39,33 @@ source venv/bin/activate
 # On Windows
 venv\Scripts\activate
 ```
+<div style="background-color:#e6ffe6;border-left:4px solid #28a745;padding:10px;margin:10px 0;">
+<strong>Time Saver:</strong> Isolating dependencies avoids conflicts so independent agents spend less time troubleshooting setups.
+</div>
 
 ### 3️⃣ **Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
+<div style="background-color:#fff7e6;border-left:4px solid #ff8c00;padding:10px;margin:10px 0;">
+<strong>Time Saver:</strong> A single command installs everything needed so independent agents can start experimenting right away.
+</div>
 
 ### 4️⃣ **Run Jupyter Notebook**
 ```bash
 jupyter notebook notebooks/Model-Context-Protocol-101.ipynb
 ```
+<div style="background-color:#f0e6ff;border-left:4px solid #8a2be2;padding:10px;margin:10px 0;">
+<strong>Time Saver:</strong> Interactive notebooks showcase MCP features without extra scripting, letting independent agents focus on results.
+</div>
 
 ### 5️⃣ **Run Tests**
 ```bash
 pytest
 ```
+<div style="background-color:#ffe6e6;border-left:4px solid #dc143c;padding:10px;margin:10px 0;">
+<strong>Time Saver:</strong> Quick tests confirm everything works so independent agents can iterate confidently.
+</div>
 
 ---
 ## 🔑 Key Features
