@@ -66,6 +66,19 @@ Here are quick examples of how an independent insurance agent might apply MCP:
 - **Lead Tracking** – triage new leads automatically using simple prompts.
 - **Commission Insights** – compute profits and commissions with a single command.
 
+To explore these datasets yourself, open the notebook
+[`notebooks/Model-Context-Protocol-101.ipynb`](notebooks/Model-Context-Protocol-101.ipynb).
+It demonstrates how to load `data/insurance_sales.csv` and calculate totals.
+You can also inspect the CSV quickly from the command line:
+
+```bash
+python - <<'EOF'
+import pandas as pd
+df = pd.read_csv('data/insurance_sales.csv')
+print(df.head())
+EOF
+```
+
 ![MCP flow](docs/img/architecture.svg "CSV data flowing through MCP tools to outputs")
 
 ---
