@@ -63,3 +63,22 @@ def filter_by_state(records: list[dict[str, str]], state: str) -> list[dict[str,
         Filtered list containing rows where ``State`` equals ``state``.
     """
     return [row for row in records if row["State"] == state]
+
+def calculate_total_premium(records: list[dict[str, str]]) -> float:
+    """Return the sum of the ``Premium`` column from insurance records.
+
+    Args:
+        records: Rows loaded via :func:`load_insurance_sales`.
+
+    Returns:
+        Total premium as a float.
+    """
+    total = 0.0
+    for row in records:
+        total += float(row["Premium"])
+    return total
+
+
+def filter_policies_by_state(records: list[dict[str, str]], state: str) -> list[dict[str, str]]:
+    """Wrapper around :func:`filter_by_state` with a clearer name."""
+    return filter_by_state(records, state)
