@@ -13,6 +13,8 @@ from business_tools import (  # noqa: E402
     load_insurance_sales,
     total_commission,
     filter_by_state,
+    calculate_total_premium,
+    filter_policies_by_state,
 )
 
 
@@ -51,4 +53,22 @@ def test_filter_by_state(tmp_path):
         fdst.write(fsrc.read())
     records = load_insurance_sales(str(dst))
     ca_records = filter_by_state(records, "CA")
+    assert len(ca_records) == 4
+
+def test_calculate_total_premium(tmp_path):
+    src = os.path.join(REPO_ROOT, "data", "insurance_sales.csv")
+    dst = tmp_path / "insurance_sales.csv"
+    with open(src, "r") as fsrc, open(dst, "w") as fdst:
+        fdst.write(fsrc.read())
+    records = load_insurance_sales(str(dst))
+    assert calculate_total_premium(records) == 18480.0
+
+
+def test_filter_policies_by_state(tmp_path):
+    src = os.path.join(REPO_ROOT, "data", "insurance_sales.csv")
+    dst = tmp_path / "insurance_sales.csv"
+    with open(src, "r") as fsrc, open(dst, "w") as fdst:
+        fdst.write(fsrc.read())
+    records = load_insurance_sales(str(dst))
+    ca_records = filter_policies_by_state(records, "CA")
     assert len(ca_records) == 4
