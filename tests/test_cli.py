@@ -13,21 +13,15 @@ def run_cli(args: list[str]) -> str:
     return result.strip()
 
 
-def test_profit_cli():
+def test_profit_cli() -> None:
     assert run_cli(["profit", "100", "40"]) == "60"
 
 
-def test_commission_cli(tmp_path: Path):
-    src = REPO_ROOT / "data" / "insurance_sales.csv"
-    dst = tmp_path / "insurance_sales.csv"
-    dst.write_text(src.read_text())
-    out = run_cli(["commission", str(dst)])
+def test_commission_cli(insurance_sales_csv: Path) -> None:
+    out = run_cli(["commission", str(insurance_sales_csv)])
     assert out == "2545.0"
 
 
-def test_premium_cli(tmp_path: Path):
-    src = REPO_ROOT / "data" / "insurance_sales.csv"
-    dst = tmp_path / "insurance_sales.csv"
-    dst.write_text(src.read_text())
-    out = run_cli(["premium", str(dst)])
+def test_premium_cli(insurance_sales_csv: Path) -> None:
+    out = run_cli(["premium", str(insurance_sales_csv)])
     assert out == "18480.0"
