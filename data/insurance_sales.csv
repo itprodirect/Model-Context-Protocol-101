@@ -1,0 +1,16 @@
+PolicyID,Premium,Commission,LeadSource,State
+P001,1200,180,Online,CA
+P002,850,102,Referral,NY
+P003,1600,240,Phone,TX
+P004,450,45,Email,FL
+P005,2100,315,Online,CA
+P006,700,70,Referral,OH
+P007,980,98,Online,TX
+P008,1400,210,Phone,NY
+P009,2300,345,Email,CA
+P010,600,60,Referral,FL
+P011,1250,187.5,Online,TX
+P012,950,95,Phone,OH
+P013,1750,262.5,Online,NY
+P014,350,35,Email,CA
+P015,2000,300,Referral,FL
