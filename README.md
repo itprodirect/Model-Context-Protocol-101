@@ -89,7 +89,18 @@ This tutorial walks through how to:
 ✅ **Test MCP tools locally**  
 ✅ **Expand MCP with custom functions**  
 ✅ **Read and process CSV files**  
-✅ **Deploy and use MCP tools efficiently**  
+✅ **Deploy and use MCP tools efficiently**
+
+## 🔄 Workflow
+Use the command-line interface to run common tasks directly from the terminal.
+
+```bash
+# Calculate profit from revenue and cost
+python src/cli.py profit 1000 600
+
+# Total commission from the sample dataset
+python src/cli.py commission data/insurance_sales.csv
+```
 
 ---
 ## 📂 Project Structure
