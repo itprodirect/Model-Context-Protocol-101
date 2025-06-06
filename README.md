@@ -154,4 +154,21 @@ Contributions are welcome! Feel free to fork the repo, submit pull requests, or 
 For questions or collaborations, connect with me on **LinkedIn** or open an **Issue** in this repository.
 
 ---
+## ❓ Common Issues
+
+**Virtual environment won't activate**
+Make sure you run `python -m venv venv` and then activate it with
+`source venv/bin/activate` on Mac/Linux or `venv\Scripts\activate` on Windows.
+Verify Python 3.8+ is installed.
+
+**Missing packages**
+Run `pip install -r requirements.txt` from the project root while your virtual
+environment is active. This installs all dependencies, including Jupyter.
+
+**Notebook won't launch**
+Activate your virtual environment and run
+`jupyter notebook notebooks/Model-Context-Protocol-101.ipynb`. If the command is
+not found, install Jupyter using `pip install jupyter`.
+
+---
 🔥 *This README is designed for clarity, readability, and ease of navigation!* 🚀
