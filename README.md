@@ -69,6 +69,7 @@ Here are quick examples of how an independent insurance agent might apply MCP:
 To explore these datasets yourself, open the notebook
 [`notebooks/Model-Context-Protocol-101.ipynb`](notebooks/Model-Context-Protocol-101.ipynb).
 It demonstrates how to load `data/insurance_sales.csv` and calculate totals.
+![Commission screenshot](docs/img/commission_screenshot.svg "Screenshot showing total commission computed from the dataset")
 You can also inspect the CSV quickly from the command line:
 
 ```bash
