@@ -1,6 +1,6 @@
 # 🚀 Model-Context-Protocol-101
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/itprodirect/Model-Context-Protocol-101/ci.yml)](https://github.com/itprodirect/Model-Context-Protocol-101/actions)
 [![Dependencies](https://img.shields.io/badge/Dependencies-Updated-brightgreen.svg)](https://github.com/itprodirect/Model-Context-Protocol-101/blob/main/requirements.txt)
@@ -159,7 +159,7 @@ For questions or collaborations, connect with me on **LinkedIn** or open an **Is
 **Virtual environment won't activate**
 Make sure you run `python -m venv venv` and then activate it with
 `source venv/bin/activate` on Mac/Linux or `venv\Scripts\activate` on Windows.
-Verify Python 3.8+ is installed.
+Verify Python 3.10+ is installed.
 
 **Missing packages**
 Run `pip install -r requirements.txt` from the project root while your virtual
