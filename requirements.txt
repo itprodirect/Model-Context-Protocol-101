@@ -1,4 +1,7 @@
-fastmcp
-pandas
-jupyter
-pytest
+fastmcp==2.12.2
+pandas==2.3.2
+jupyter==1.1.1
+pytest==8.4.1
+ruff==0.12.11
+mypy==1.17.1
+-e .

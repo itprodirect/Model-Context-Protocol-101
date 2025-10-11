@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp101"
+version = "0.1.0"
+description = "Utilities and CLI for the Model Context Protocol 101 tutorial"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Model Context Protocol Team"}]
+keywords = ["model-context-protocol", "insurance", "tutorial"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+]
+
+[tool.setuptools]
+packages = ["mcp101"]
+package-dir = {"" = "src"}
+
+[project.scripts]
+mcp101-cli = "mcp101.cli:main"

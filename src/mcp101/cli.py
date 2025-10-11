@@ -8,13 +8,18 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+if __package__:
+    from . import business_tools as _business_tools
+else:  # pragma: no cover - fallback when executed as a script
+    import sys
 
-from business_tools import (
-    calculate_profit,
-    calculate_total_premium,
-    load_insurance_sales,
-    total_commission,
-)
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from mcp101 import business_tools as _business_tools
+
+calculate_profit = _business_tools.calculate_profit
+calculate_total_premium = _business_tools.calculate_total_premium
+load_insurance_sales = _business_tools.load_insurance_sales
+total_commission = _business_tools.total_commission
 
 
 def main(argv: list[str] | None = None) -> None:
