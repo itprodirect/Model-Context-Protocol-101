@@ -47,6 +47,8 @@ venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+This installs both third-party libraries and the local `mcp101` package, so the
+CLI and utilities can be imported from anywhere in the project.
 <div style="background-color:#fff7e6;border-left:4px solid #ff8c00;padding:10px;margin:10px 0;">
 <strong>Time Saver:</strong> A single command installs everything needed so independent agents can start experimenting right away.
 </div>
@@ -112,10 +114,10 @@ Use the command-line interface to run common tasks directly from the terminal.
 
 ```bash
 # Calculate profit from revenue and cost
-python src/cli.py profit 1000 600
+mcp101-cli profit 1000 600
 
 # Total commission from the sample dataset
-python src/cli.py commission data/insurance_sales.csv
+mcp101-cli commission data/insurance_sales.csv
 ```
 
 ---
