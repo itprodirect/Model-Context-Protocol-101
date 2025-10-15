@@ -1,4 +1,12 @@
-fastmcp
-pandas
-jupyter
-pytest
+# Core runtime dependencies
+fastmcp==2.12.2
+pandas==2.3.2
+
+# Developer tooling
+jupyter==1.1.1
+mypy==1.17.1
+pytest==8.4.1
+ruff==0.12.11
+
+# Install the local package in editable mode for CLI entry points
+-e .

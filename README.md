@@ -1,6 +1,6 @@
 # 🚀 Model-Context-Protocol-101
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/itprodirect/Model-Context-Protocol-101/ci.yml)](https://github.com/itprodirect/Model-Context-Protocol-101/actions)
 [![Dependencies](https://img.shields.io/badge/Dependencies-Updated-brightgreen.svg)](https://github.com/itprodirect/Model-Context-Protocol-101/blob/main/requirements.txt)
@@ -47,6 +47,8 @@ venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+This installs both third-party libraries and the local `mcp101` package, so the
+CLI and utilities can be imported from anywhere in the project.
 <div style="background-color:#fff7e6;border-left:4px solid #ff8c00;padding:10px;margin:10px 0;">
 <strong>Time Saver:</strong> A single command installs everything needed so independent agents can start experimenting right away.
 </div>
@@ -112,10 +114,10 @@ Use the command-line interface to run common tasks directly from the terminal.
 
 ```bash
 # Calculate profit from revenue and cost
-python src/cli.py profit 1000 600
+mcp101-cli profit 1000 600
 
 # Total commission from the sample dataset
-python src/cli.py commission data/insurance_sales.csv
+mcp101-cli commission data/insurance_sales.csv
 ```
 
 ---
@@ -159,7 +161,7 @@ For questions or collaborations, connect with me on **LinkedIn** or open an **Is
 **Virtual environment won't activate**
 Make sure you run `python -m venv venv` and then activate it with
 `source venv/bin/activate` on Mac/Linux or `venv\Scripts\activate` on Windows.
-Verify Python 3.8+ is installed.
+Verify Python 3.10+ is installed.
 
 **Missing packages**
 Run `pip install -r requirements.txt` from the project root while your virtual

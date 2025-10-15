@@ -6,7 +6,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from business_tools import (  # noqa: E402
+from mcp101.business_tools import (  # noqa: E402
     calculate_profit,
     get_sales_from_csv,
     calculate_commission,

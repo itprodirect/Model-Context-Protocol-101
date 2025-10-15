@@ -1,15 +1,20 @@
+import os
 import subprocess
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-CLI = REPO_ROOT / "src" / "cli.py"
+MODULE = "mcp101.cli"
 
 
 def run_cli(args: list[str]) -> str:
     """Run the CLI with the given arguments and return stdout."""
-    cmd = [sys.executable, str(CLI), *args]
-    result = subprocess.check_output(cmd, text=True)
+    cmd = [sys.executable, "-m", MODULE, *args]
+    env = os.environ.copy()
+    src_dir = Path(__file__).resolve().parents[1] / "src"
+    env["PYTHONPATH"] = os.pathsep.join(
+        [str(src_dir), env.get("PYTHONPATH", "")]
+    ).rstrip(os.pathsep)
+    result = subprocess.check_output(cmd, text=True, env=env)
     return result.strip()
 
 
