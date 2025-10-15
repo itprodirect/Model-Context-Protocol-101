@@ -1,84 +1,30 @@
-"""Utility functions for business operations."""
+"""Compatibility wrapper for legacy ``business_tools`` imports.
 
-import csv
+This module re-exports the public helpers from :mod:`mcp101.business_tools`
+so existing guides, notebooks, or downstream scripts that still import the
+original ``business_tools`` module keep working without modification.
+"""
 
+from __future__ import annotations
 
-def calculate_profit(revenue: float, cost: float) -> float:
-    """Return the profit calculated as revenue minus cost."""
-    return revenue - cost
+from mcp101 import business_tools as _impl
 
+calculate_profit = _impl.calculate_profit
+get_sales_from_csv = _impl.get_sales_from_csv
+calculate_commission = _impl.calculate_commission
+load_insurance_sales = _impl.load_insurance_sales
+total_commission = _impl.total_commission
+filter_by_state = _impl.filter_by_state
+calculate_total_premium = _impl.calculate_total_premium
+filter_policies_by_state = _impl.filter_policies_by_state
 
-def get_sales_from_csv(filename: str) -> float:
-    """Read a CSV of sales data and return total sales as float."""
-    total = 0.0
-    with open(filename, newline="") as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            total += float(row["sales"])
-    return total
-
-
-def calculate_commission(premiums: list[float], rate: float = 0.1) -> float:
-    """Return total commission in USD rounded to two decimals."""
-    return round(sum(premiums) * rate, 2)
-
-
-def load_insurance_sales(filename: str) -> list[dict[str, str]]:
-    """Return all rows from an insurance sales CSV as dictionaries.
-
-    Args:
-        filename: Path to ``insurance_sales.csv``.
-
-    Returns:
-        A list of dictionaries, one per CSV row.
-    """
-    with open(filename, newline="") as csvfile:
-        reader = csv.DictReader(csvfile)
-        return list(reader)
-
-
-def total_commission(records: list[dict[str, str]]) -> float:
-    """Return the sum of the ``Commission`` column from insurance records.
-
-    Args:
-        records: Rows loaded via :func:`load_insurance_sales`.
-
-    Returns:
-        Total commission as a float.
-    """
-    total = 0.0
-    for row in records:
-        total += float(row["Commission"])
-    return total
-
-
-def filter_by_state(records: list[dict[str, str]], state: str) -> list[dict[str, str]]:
-    """Return only the rows matching a given state code.
-
-    Args:
-        records: Insurance sale rows.
-        state: Two-letter state abbreviation.
-
-    Returns:
-        Filtered list containing rows where ``State`` equals ``state``.
-    """
-    return [row for row in records if row["State"] == state]
-
-def calculate_total_premium(records: list[dict[str, str]]) -> float:
-    """Return the sum of the ``Premium`` column from insurance records.
-
-    Args:
-        records: Rows loaded via :func:`load_insurance_sales`.
-
-    Returns:
-        Total premium as a float.
-    """
-    total = 0.0
-    for row in records:
-        total += float(row["Premium"])
-    return total
-
-
-def filter_policies_by_state(records: list[dict[str, str]], state: str) -> list[dict[str, str]]:
-    """Wrapper around :func:`filter_by_state` with a clearer name."""
-    return filter_by_state(records, state)
+__all__ = [
+    "calculate_profit",
+    "get_sales_from_csv",
+    "calculate_commission",
+    "load_insurance_sales",
+    "total_commission",
+    "filter_by_state",
+    "calculate_total_premium",
+    "filter_policies_by_state",
+]
