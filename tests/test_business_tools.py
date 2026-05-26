@@ -1,4 +1,5 @@
 
+import importlib
 import sys
 from pathlib import Path
 
@@ -54,3 +55,20 @@ def test_filter_policies_by_state(insurance_sales_csv: Path) -> None:
     records = load_insurance_sales(str(insurance_sales_csv))
     ca_records = filter_policies_by_state(records, "CA")
     assert len(ca_records) == 4
+
+
+def test_legacy_business_tools_reexports() -> None:
+    legacy = importlib.import_module("business_tools")
+    modern = importlib.import_module("mcp101.business_tools")
+
+    for name in [
+        "calculate_profit",
+        "get_sales_from_csv",
+        "calculate_commission",
+        "load_insurance_sales",
+        "total_commission",
+        "filter_by_state",
+        "calculate_total_premium",
+        "filter_policies_by_state",
+    ]:
+        assert getattr(legacy, name) is getattr(modern, name)
