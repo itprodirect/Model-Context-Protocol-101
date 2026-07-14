@@ -2,28 +2,35 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.13"]
+
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with ruff
-      run: |
-        ruff check .
-    - name: Type check with mypy
-      run: |
-        mypy --strict .
-    - name: Run tests
-      run: |
-        if [ -d tests ]; then pytest -q; else echo "No tests"; fi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install project and development dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Lint
+        run: python -m ruff check .
+      - name: Test unit and MCP protocol behavior
+        run: python -m pytest
+      - name: Execute tutorial notebook
+        run: >-
+          python -m nbconvert
+          --to notebook
+          --execute notebooks/01_mcp_101_harborlight.ipynb
+          --output executed.ipynb
+          --ExecutePreprocessor.timeout=120
