@@ -1,6 +1,9 @@
 """MCP tool registration and stdio server entry point."""
 
+from typing import Annotated
+
 from mcp.server.fastmcp import FastMCP
+from pydantic import Field
 
 from . import services
 
@@ -15,7 +18,12 @@ mcp = FastMCP(
 
 
 @mcp.tool()
-def list_upcoming_renewals(days: int) -> services.UpcomingRenewals:
+def list_upcoming_renewals(
+    days: Annotated[
+        int,
+        Field(strict=True, ge=0, le=services.MAX_RENEWAL_WINDOW_DAYS),
+    ],
+) -> services.UpcomingRenewals:
     """List fictional policy renewals in the next 0-365 days.
 
     The window begins at the dataset's documented snapshot date (2026-07-01),
@@ -27,7 +35,14 @@ def list_upcoming_renewals(days: int) -> services.UpcomingRenewals:
 
 @mcp.tool()
 def calculate_premium_change(
-    current_cents: int, renewal_cents: int
+    current_cents: Annotated[
+        int,
+        Field(strict=True, gt=0),
+    ],
+    renewal_cents: Annotated[
+        int,
+        Field(strict=True, gt=0),
+    ],
 ) -> services.PremiumChange:
     """Calculate the amount, percentage, and direction of a proposed premium change.
 

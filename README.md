@@ -1,5 +1,7 @@
 # Model Context Protocol 101: Harborlight Insurance Agency
 
+[![CI](https://github.com/itprodirect/Model-Context-Protocol-101/actions/workflows/ci.yml/badge.svg)](https://github.com/itprodirect/Model-Context-Protocol-101/actions/workflows/ci.yml)
+
 Build and run a small, real MCP client/server workflow that reviews fictional policy renewals and proposed premium changes.
 
 This tutorial uses Python 3.10+ and the official stable MCP Python SDK v1. It is deliberately narrow: two read-only tools, one packaged CSV, one protocol client, and tests that cross the stdio protocol boundary.
@@ -191,6 +193,10 @@ In the Inspector:
 4. Call `calculate_premium_change` with `{"current_cents": 120000, "renewal_cents": 126000}`.
 
 The Inspector is a manual development tool and is not installed by this Python project.
+
+![MCP Inspector connected to Harborlight and listing its tools](docs/assets/harborlight-mcp-inspector-tools.png)
+
+> MCP Inspector connected to the Harborlight stdio server and discovered both registered tools.
 
 ## Learning path
 
