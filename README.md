@@ -129,6 +129,52 @@ calculate_premium_change result:
 
 This is a protocol demonstration, not a direct Python call: `ClientSession` initializes a session with a separately launched server, sends `tools/list`, and sends `tools/call` over stdio.
 
+## Connect an MCP host application
+
+The three runnable surfaces in this repository serve different purposes:
+
+- `examples/protocol_client.py` is a deterministic Python MCP client used to demonstrate and test protocol messages.
+- MCP Inspector is an interactive debugging UI for examining schemas and calling tools directly.
+- Visual Studio Code with GitHub Copilot is a real AI host application: its chat agent can discover these tools and decide when to call them while answering a user.
+
+The following setup was checked against the current official [VS Code MCP server documentation](https://code.visualstudio.com/docs/agent-customization/mcp-servers) and [MCP configuration reference](https://code.visualstudio.com/docs/agents/reference/mcp-configuration). It was not manually exercised during this release pass.
+
+1. Activate the environment where you installed this project, then obtain that environment's absolute Python path:
+
+   ```bash
+   python -c "import sys; print(sys.executable)"
+   ```
+
+2. In VS Code, run **MCP: Open User Configuration** from the Command Palette. Add this entry to the `servers` object in the opened `mcp.json`, replacing `<absolute-python-path>` with the path printed above:
+
+   ```json
+   {
+     "servers": {
+       "harborlight": {
+         "type": "stdio",
+         "command": "<absolute-python-path>",
+         "args": ["-m", "harborlight_mcp"]
+       }
+     }
+   }
+   ```
+
+   This configuration starts exactly:
+
+   ```text
+   <absolute-python-path> -m harborlight_mcp
+   ```
+
+   In JSON on Windows, either write the path with forward slashes or escape each backslash as `\\`.
+
+3. Start or restart the `harborlight` server when VS Code prompts, review the configuration, and confirm that you trust this local server. In Chat, use **Configure Tools** to confirm both Harborlight tools are enabled.
+
+4. Ask the agent a question such as:
+
+   > Which fictional Harborlight policies renew in the next 30 days, and what is the proposed premium change for FIC-HLA-1002?
+
+VS Code with GitHub Copilot is separate software and may require sign-in, an eligible plan, and organization permission to use MCP tools.
+
 ## Test with MCP Inspector
 
 [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) requires a supported Node.js/npm installation in addition to the Python environment. With the virtual environment active, run:
@@ -235,7 +281,7 @@ Harborlight Insurance Agency, its customers, identifiers, dates, and premiums ar
 
 ## Project history
 
-This repository began as a broad exploratory notebook. The original notebook is preserved at `archive/original_notebook.ipynb` and in Git history. This focused rebuild replaces direct-call demonstrations and generated screenshots with a small package, an actual MCP client/server exchange, and executable tests. The project is maintained under the `itprodirect` repository and uses the existing MIT license.
+This repository began as a broad exploratory notebook. `archive/original_notebook.ipynb` is an early exploratory revision retained for historical context; it does not run against the current `harborlight_mcp` package. This focused rebuild replaces direct-call demonstrations and generated screenshots with a small package, an actual MCP client/server exchange, and executable tests. The project is maintained under the `itprodirect` repository and uses the existing MIT license.
 
 ## Official references
 

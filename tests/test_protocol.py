@@ -42,5 +42,26 @@ async def _exercise_protocol() -> None:
             ] == ["FIC-HLA-1001", "FIC-HLA-1002", "FIC-HLA-1003"]
 
 
+async def _exercise_invalid_argument() -> None:
+    server = StdioServerParameters(command=sys.executable, args=["-m", "harborlight_mcp"])
+
+    async with stdio_client(server) as (read_stream, write_stream):
+        async with ClientSession(read_stream, write_stream) as session:
+            await session.initialize()
+            invalid_result = await session.call_tool(
+                "list_upcoming_renewals", arguments={"days": 400}
+            )
+
+    assert invalid_result.isError is True
+    assert any(
+        "days must be between 0 and 365" in getattr(content, "text", "")
+        for content in invalid_result.content
+    )
+
+
 def test_stdio_tool_discovery_and_invocation() -> None:
     asyncio.run(_exercise_protocol())
+
+
+def test_stdio_invalid_argument_returns_tool_error() -> None:
+    asyncio.run(_exercise_invalid_argument())
