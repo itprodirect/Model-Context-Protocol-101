@@ -1,27 +1,15 @@
-# Ignore virtual environments
+.venv/
 venv/
-
-# Ignore Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Ignore Python cache files
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Ignore pytest cache
+*.py[cod]
+*.egg-info/
 .pytest_cache/
-
-# Ignore system files
-.DS_Store
-Thumbs.db
-
-# Ignore environment configuration files
+.ruff_cache/
+.ipynb_checkpoints/
+.notebook-output/
+build/
+dist/
 .env
 *.log
-
-# Ignore build files
-*.egg-info/
-dist/
-build/
+.DS_Store
+Thumbs.db

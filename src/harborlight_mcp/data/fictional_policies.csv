@@ -1,0 +1,7 @@
+policy_id,customer_label,line_of_business,renewal_date,current_premium_cents,proposed_premium_cents,fictional_record
+FIC-HLA-1001,Fictional Alder Bakery,Commercial Package,2026-07-01,184500,193725,true
+FIC-HLA-1002,Fictional Beacon Books,Businessowners,2026-07-10,126000,132300,true
+FIC-HLA-1003,Fictional Cedar Cycle Shop,Commercial Auto,2026-07-22,248900,241433,true
+FIC-HLA-1004,Fictional Driftwood Design,Professional Liability,2026-08-15,97500,102375,true
+FIC-HLA-1005,Fictional Eastport Florist,Businessowners,2026-10-03,143250,143250,true
+FIC-HLA-1006,Fictional Fog Bell Cafe,Workers Compensation,2027-01-12,211000,227880,true

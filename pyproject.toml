@@ -1,26 +1,53 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mcp101"
-version = "0.1.0"
-description = "Utilities and CLI for the Model Context Protocol 101 tutorial"
+name = "harborlight-mcp"
+version = "1.0.0"
+description = "A beginner-friendly MCP tutorial using fictional insurance renewals"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
-authors = [{name = "Model Context Protocol Team"}]
-keywords = ["model-context-protocol", "insurance", "tutorial"]
+license = {file = "LICENSE"}
+authors = [{name = "itprodirect"}]
+keywords = ["mcp", "model-context-protocol", "insurance", "tutorial"]
 classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
-    "License :: OSI Approved :: MIT License",
+    "Topic :: Education",
+]
+dependencies = [
+    "mcp[cli]>=1.28,<2",
+    "typing-extensions>=4.9; python_version < '3.12'",
 ]
 
-[tool.setuptools]
-packages = ["mcp101"]
-package-dir = {"" = "src"}
+[project.optional-dependencies]
+dev = [
+    "ipykernel>=6,<8",
+    "nbconvert>=7,<8",
+    "pytest>=8,<9",
+    "ruff>=0.12,<1",
+]
 
 [project.scripts]
-mcp101-cli = "mcp101.cli:main"
+harborlight-mcp = "harborlight_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+harborlight_mcp = ["data/*.csv"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
